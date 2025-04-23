@@ -1,17 +1,17 @@
 // Exercício 1 : Par ou Impar
-let num = 17;
+/* let num = 17;
 
 if (num % 2 == 0) {
     console.log("Par");
 } else {
     console.log("Impar");
-}
+} */
 
 //------------------------------------------------------------------
 
 //Exercício 2 : Maior entre três números
 
-let num1 = 35, num2 = 35, num3 = 5;
+/* let num1 = 35, num2 = 35, num3 = 5;
 console.log("Dentre os três números apresentados:\n");
 if (num1 > num2 && num1 > num3) {
     console.log("O maior número é o:", num1);
@@ -20,14 +20,14 @@ if (num1 > num2 && num1 > num3) {
 } else if (num3 > num1 && num3 > num2) {
     console.log("O maior número é o:", num2);
 } else {
-    console.log("Dos números apresentados, todos números são iguais ou há empate entre dois ou mais números.");
-}
+    console.log(" Todos números são iguais ou há empate entre dois ou mais números.");
+} */
 
 //------------------------------------------------------------------
-
-//Exercicio 3: façam uma calculadora simples utilizando entrada de usuário;
-console.log("\n\nCALCULADORA SIMPLES")
 const prompt = require("prompt-sync")();
+//Exercicio 3: façam uma calculadora simples utilizando entrada de usuário;
+/* console.log("\n\nCALCULADORA SIMPLES")
+
 
 let entrada1 = parseInt(prompt("Insira o primeiro número:")),
     entrada2 = parseInt(prompt("Insira o segundo número:")),
@@ -54,6 +54,9 @@ switch (operacao) {
         resultado = entrada1 * entrada2;
         break;
     case 4:
+        if (entrada2 === 0) {
+            throw new Error("Não pode dividir por 0");
+        }
         resultado = entrada1 / entrada2;
         break;
     default:
@@ -61,4 +64,48 @@ switch (operacao) {
         break;
 }
 
-console.log(`Resultado da sua conta: ${resultado}`);
+console.log(`Resultado da sua conta: ${resultado}`); */
+//------------------------------------------------------------------
+
+//Exercício 4: Verificar se um número é positivo, negativo ou zero
+
+/* let numero = Number(prompt("Insira um número para que eu diga se é negativo ou positivo: "));
+
+if (numero < 0) {
+    console.log("O número digitado é negativo");
+} else if (numero === 0) {
+    console.log("O número digitado é 0");
+} else {
+    console.log("O número digitado é positivo");
+} */
+
+//------------------------------------------------------------------
+
+
+//Exercício 5: Verificar se um ano é bissexto
+let ano = Number(prompt("Forneça um ano do calendário: "));
+
+if ((ano % 400 === 0) || (ano % 100 !== 0 && ano % 4 === 0)) {
+    console.log("É Bissexto!");
+} else {
+    console.log("Não é bissexto!");
+}
+
+//------------------------------------------------------------------
+
+//Exercício 6: Definam faixas etárias par crianças, adolescentes e adultos e com switch apresentem na tela se a pessoa que informou a idade está em uma e qual a faixa etária
+
+let idade = Number(prompt("Forneça uma idade: "));
+
+switch (true) {
+    case (idade < 12):
+        console.log("Idade de criança");
+        break;
+    case (idade >= 12 && idade < 18):
+        console.log("Idade de adolescente");
+        break;
+    default:
+        console.log("Idade de adulto");
+}
+
+
