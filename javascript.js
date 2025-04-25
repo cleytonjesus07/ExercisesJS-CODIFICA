@@ -35,11 +35,11 @@ let entrada1 = parseInt(prompt("Insira o primeiro número:")),
 
 console.log(`
 Escolha uma das operações disponíveis:
-1 - (+)    
-2 - (-)    
-3 - (x)    
+1 - (+)
+2 - (-)
+3 - (x)
 4 - (÷)
-    \n    
+    \n
 `);
 
 let operacao = parseInt(prompt("Escolha uma opção:"));
@@ -83,19 +83,19 @@ if (numero < 0) {
 
 
 //Exercício 5: Verificar se um ano é bissexto
-let ano = Number(prompt("Forneça um ano do calendário: "));
+/* let ano = Number(prompt("Forneça um ano do calendário: "));
 
 if ((ano % 400 === 0) || (ano % 100 !== 0 && ano % 4 === 0)) {
     console.log("É Bissexto!");
 } else {
     console.log("Não é bissexto!");
 }
-
+ */
 //------------------------------------------------------------------
 
 //Exercício 6: Definam faixas etárias par crianças, adolescentes e adultos e com switch apresentem na tela se a pessoa que informou a idade está em uma e qual a faixa etária
 
-let idade = Number(prompt("Forneça uma idade: "));
+/* let idade = Number(prompt("Forneça uma idade: "));
 
 switch (true) {
     case (idade < 12):
@@ -106,6 +106,39 @@ switch (true) {
         break;
     default:
         console.log("Idade de adulto");
+} */
+//------------------------------------------------------------------
+
+/* console.log("--TABUADA SIMULATOR--\n")
+let numero = Number(prompt("Digite um número para ver a sua tabuada: "));
+let count = 0;
+if (isNaN(numero)) throw new Error("Valor inválido!");
+while (count <= 10) {
+    console.log(`${numero} X ${count} = ${numero * count}`);
+    count++
+} */
+//------------------------------------------------------------------
+
+// Contagem regressiva
+
+/* let count = 10;
+
+while (count > 0) {
+    console.log(count--);
+}; */
+
+//------------------------------------------------------------------
+
+// Façam a média aritmética de números inseridos até que o usuário digite 0.
+
+/* console.log("--MÉDIA ARITMÉTICA--");
+
+let numero = null, acc = 0, count = 0;
+
+while (numero !== 0) {
+    numero = Number(prompt(`Digite a sua ${count + 1}° nota: `));
+    if (numero === 0) break;
+    acc += numero;
+    count++;
 }
-
-
+console.log(`A média aritmética dos números inseridos foi: ${(acc / count).toFixed(1)}`); */
