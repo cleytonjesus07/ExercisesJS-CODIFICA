@@ -6,6 +6,7 @@
   "scripts": {
     "start": "node Aula/arrays.js",
     "lista1": "node Listas/Lista1/exercicios.js",
+    "lista2-parte1": "node Listas/Lista2/parte1.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
