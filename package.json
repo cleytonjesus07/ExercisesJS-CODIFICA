@@ -4,6 +4,7 @@
   "description": "",
   "main": "javscript.js",
   "scripts": {
+    "start": "node Aula/arrays.js",
     "lista1": "node Listas/Lista1/exercicios.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
