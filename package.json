@@ -4,7 +4,7 @@
   "description": "",
   "main": "javscript.js",
   "scripts": {
-    "start": "node Aula/arraysParte2.js",
+    "start": "node Aula/funcoes.js",
     "lista1": "node Listas/Lista1/exercicios.js",
     "lista2-parte1": "node Listas/Lista2/parte1.js",
     "lista2-parte2": "node Listas/Lista2/parte2.js",
