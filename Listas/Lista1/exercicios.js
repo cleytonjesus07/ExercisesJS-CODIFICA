@@ -253,7 +253,8 @@ console.log("Exercício 13: ");
 let soma13 = 0, index13 = 0, media;
 
 while (true) {
-    let numero = Number(prompt("Digite um número( 0 -> para sair): "));
+    let numero = Number(prompt("Digite um número decimal( 0 -> para sair): "));
+    if (numero % 2 !== 0) throw new Error("Não é um decimal");
     if (numero == 0) break;
     soma13 += numero;
     index13++;
