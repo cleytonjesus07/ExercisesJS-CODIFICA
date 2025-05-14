@@ -79,7 +79,7 @@ for (let value of Object.keys(jogo)) {
 
 //Calculem as médias das notas dos alunos de um professor e digam se a turma do Professor está na média.
 
-let professor = {
+/* let professor = {
     nome: 'Stark Parker',
     materia: 'Física',
     notas: {
@@ -105,7 +105,7 @@ let professor = {
 
 for (let v of professor) {
     console.log(v)
-}
+} */
 
 /* let somaNotas = 0, numeroAlunos = 0;
 
@@ -121,3 +121,105 @@ if (media >= 6) {
 } else {
     console.log(`a media da turma é ${media} e está abaixo do padrão`);
 } */
+
+let livraria = [
+    { titulo: "1984", autor: "George Orwell", ano: 1984 },
+    { titulo: "O profeta", autor: "Endrew Berthold", ano: 2001 },
+    { titulo: "Código Limpo", autor: "Martin", ano: 2010 },
+    { titulo: "O Velho e o Mar", autor: "Hemmingway", ano: 1910 },
+    { titulo: "O Principe", autor: "Maquiável", ano: 2002 }
+]
+
+/* for (let livro of livraria) {
+    if (livro.ano < 2000) {
+        console.log(livro);
+    }
+} */
+
+let filmes = [
+    { titulo: "Sempre ao seu lado", genero: "De chorar" },
+    { titulo: "Massacre da Serra Elétrica", genero: "Terroor" },
+    { titulo: "Minha Mãe é uma Peça", genero: "Comédia" },
+    { titulo: "Tarzan", genero: "Aventura" },
+    { titulo: "Como eu era antes de você", genero: "De chorar" },
+    { titulo: "Jogo da imitação", genero: "Histórico" },
+    { titulo: "Top Gun", genero: "Guerra" },
+    { titulo: "Your Name", genero: "Romance" },
+    { titulo: "Deadpool", genero: "Héroi" },
+    { titulo: "Batman Forever", genero: "Héroi" },
+]
+
+/* let generoContagem = filmes.reduce((acc, filme) => {
+    acc[filme.genero] = (acc[filme.genero] || 0) + 1;
+    return acc;
+}, {});
+
+console.log(generoContagem) */
+
+/* let contagemFilmes = {};
+
+filmes.forEach((filme) => {
+    if (contagemFilmes[filme.genero]) {
+        //Se já estiver listado ele incrementa
+        contagemFilmes[filme.genero]++
+    } else {
+        contagemFilmes[filme.genero] = 1
+    }
+})
+
+for (let genero in contagemFilmes) {
+    console.log(`Estão presentes na lista ${contagemFilmes[genero]} do gênero ${genero}`)
+} */
+
+/* let objeto = { nome: "Géssica" }
+objeto.idade = 32 //Inserindo uma key e valor no objeto
+console.log(objeto) */
+
+//Construam uma função que calcule um fatorial de um número
+
+/* function calcularFatorial(numero) {
+    if (numero < 0) return "Não existe fatorial de números negativos.";
+    if (numero === 0 || numero === 1) return 1;
+
+    let resultado = 1;
+    for (let i = 2; i <= numero; i++) {
+        resultado *= i;
+    }
+    return resultado;
+}
+
+console.log(calcularFatorial(5)); */
+
+//Fibonacci
+/* 
+function fibonacci() {
+    let a = 0, b = 1, temp; // não pode se iterados
+    console.log(a);
+    console.log(b);
+    for (let i = 3; i <= 10; i++) {
+        temp = a + b;
+        console.log(temp)
+        a = b;
+        b = temp
+    }
+} */
+
+/* function PA(primeiroTermo, razao) {
+    let soma = 0;
+    for (let i = 0; i <= 10; i++) {
+        let term = primeiroTermo + i * razao;
+        console.log(term);
+        soma += term;
+    }
+    console.log(`A soma dos termos é ${soma}`);
+}
+
+console.log(PA(4, 3)); */
+
+
+/* 
+Forma mais minimalista de implementar um fibonacci em JS
+const fibonacci = n => [...Array(n)].reduce((a, _, i) => a.concat(i > 1 ? a[i - 1] + a[i - 2] : i), []);
+
+console.log(fibonacci(10))
+*/
