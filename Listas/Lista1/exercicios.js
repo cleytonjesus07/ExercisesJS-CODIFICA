@@ -21,12 +21,16 @@ console.log("Exercício 2: ");
 
 let idade = Number(prompt("Digite uma idade: "));
 
-if (idade >= 60) {
+if (idade > 60) {
     console.log("Idoso");
-} else if (idade >= 20) {
+} else if (idade > 18) {
     console.log("Adulto");
-} else {
+} else if (idade > 12) {
     console.log("Adolescente");
+} else if (idade > 2) {
+    console.log("Criança");
+} else {
+    console.log("Bebê");
 }
 console.log("-------------------------\n");
 
@@ -254,7 +258,6 @@ let soma13 = 0, index13 = 0, media;
 
 while (true) {
     let numero = Number(prompt("Digite um número decimal( 0 -> para sair): "));
-    if (numero % 2 !== 0) throw new Error("Não é um decimal");
     if (numero == 0) break;
     soma13 += numero;
     index13++;

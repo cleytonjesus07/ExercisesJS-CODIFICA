@@ -1,17 +1,13 @@
-# 📘 Lista de Exercícios em Node.js
+# 📘 Lista de Exercícios Node.js
 
-Este projeto contém uma lista de exercícios resolvidos em JavaScript utilizando Node.js no terminal.
+![Node.js](https://img.shields.io/badge/Node.js-18+-green)
+![npm](https://img.shields.io/badge/npm-9+-orange)
+![pnpm](https://img.shields.io/badge/pnpm-7+-blue)
 
-## ✅ Requisitos
+## ▶️ Execução com npm/pnpm
 
-- [Node.js](https://nodejs.org/) instalado na máquina
-
-## ▶️ Como executar os exercícios
-
-1. Abra o terminal, navegue até a pasta do projeto e instale as dependências.
-
-1. Depois de instalar, execute o seguinte comando: 
-
-se for PNPM = 'pnpm run lista1';
-se for NPM = 'npm run lista1';
-
+### 📌 Executar todos os exercícios da lista obrigatória
+```bash
+npm run lista1
+# ou 
+pnpm lista1
