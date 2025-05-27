@@ -1,6 +1,6 @@
 const prompt = require("prompt-sync")();
 
-console.log("----EXERCICIOS - LISTA 2(Parte 1)----")
+console.log("----EXERCICIOS - LISTA 1(Parte 1)----")
 
 /* 1. Escreva um programa para calcular a redução do tempo de vida de um fumante.
 Pergunte a quantidade de cigarros fumados por dias e quantos anos ele já fumou.

@@ -5,10 +5,11 @@
   "main": "javscript.js",
   "scripts": {
     "start": "node Aula/SimplyLinkedList.js",
-    "lista1": "node Listas/Lista1/exercicios.js",
-    "lista2-parte1": "node Listas/Lista2/parte1.js",
-    "lista2-parte2": "node Listas/Lista2/parte2.js",
-    "lista2-parte3": "node Listas/Lista2/parte3.js",
+    "obrigatoria-lista1": "node Listas/obrigatoria/Lista1/exercicios.js",
+    "obrigatoria-lista2": "node Listas/obrigatoria/Lista2/exercicios.js",
+    "opcional-lista2-parte1": "node Listas/opcional/Lista1/parte1.js",
+    "opcional-lista2-parte2": "node Listas/opcional/Lista1/parte2.js",
+    "opcional-lista2-parte3": "node Listas/opcional/Lista1/parte3.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
