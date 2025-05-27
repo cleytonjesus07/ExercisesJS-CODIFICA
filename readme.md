@@ -4,10 +4,18 @@
 ![npm](https://img.shields.io/badge/npm-9+-orange)
 ![pnpm](https://img.shields.io/badge/pnpm-7+-blue)
 
-## ▶️ Execução com npm/pnpm
+## ▶️ Como Executar os Exercícios
 
-### 📌 Executar todos os exercícios da lista obrigatória
+### 📚 Listas Obrigatórias
+
+#### 1. Lista Obrigatória 1
 ```bash
-npm run lista1
-# ou 
-pnpm lista1
+npm run obrigatoria-lista1
+# ou
+pnpm obrigatoria-lista1
+```
+#### 2. Lista Obrigatória 2
+```bash
+npm run obrigatoria-lista2
+# ou
+pnpm obrigatoria-lista2
