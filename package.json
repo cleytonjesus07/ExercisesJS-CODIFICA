@@ -4,7 +4,7 @@
   "description": "",
   "main": "javscript.js",
   "scripts": {
-    "start": "node Aula/SimplyLinkedList.js",
+    "start": "node Aula/Tree.js",
     "obrigatoria-lista1": "node Listas/obrigatoria/Lista1/exercicios.js",
     "obrigatoria-lista2": "node Listas/obrigatoria/Lista2/exercicios.js",
     "opcional-lista2-parte1": "node Listas/opcional/Lista1/parte1.js",
