@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício - 12/06</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            scroll-behavior: smooth !important;
+        }
+
+        header {
+            background-color: #1e1e1e;
+            padding: 1em;
+            margin-bottom: 1em;
+        }
+
+        header>a {
+            all: unset;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        header>a:hover {
+            text-decoration: underline;
+        }
+
+        section {
+            margin-top: 5em;
+        }
+
+        .youtube_link {
+            all: unset;
+            font-family: sans-serif;
+            font-size: 15px;
+            background: linear-gradient(rgb(255, 24, 24), rgb(255, 0, 0));
+            padding: .2em .5em;
+            border-radius: 1pc;
+            cursor: pointer;
+        }
+
+        .youtube_link:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            background-color: #1e1e1e;
+            display: flex;
+            justify-content: center;
+            padding: 1em;
+            margin-top: 1em;
+        }
+
+        footer>a {
+            all: unset;
+            margin: 0 1em;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        footer>a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <a href="/">Home</a>
+        <a href="#galeria-de-imagens">Galeria de Imagens</a>
+        <a href="#sessão-de-video">Sessão de vídeo</a>
+    </header>
+    <section id="galeria-de-imagens">
+        <h2>Galeria de imagens</h2>
+        <figure>
+            <img src="https://i.ytimg.com/vi/zrvgC9QBSE8/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLCSTWSaXDxo9wz82Td9t4V59671ug"
+                alt="Imagem do game Resident Evil 9" title="Imagem do game Resident Evil 9" width="300" />
+            <figcaption>🚨Anunciado!!!🚨 CAPCOM anuncia uma sequência a um dos seus maiores títulos!
+            </figcaption>
+        </figure>
+        <figure>
+            <img src="https://nintendoboy.com.br/wp-content/uploads/2024/08/zelda-tears-of-the-kingdom-characters.webp"
+                title="Imagem do game The Legend Of Zelda: Tears Of The Kingdom"
+                alt="Imagem do game The Legend Of Zelda: Tears Of The Kingdom" width="300" />
+            <figcaption>Nintendo tá processando geral do nada, só porque pode.</figcaption>
+        </figure>
+    </section>
+    <section id="sessão-de-video">
+        <h2>Sessão de vídeo</h2>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/w75_Wh9Aq_c?si=CMQZsME3fSeLKNQm"
+            title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </section>
+    <a class="youtube_link" href="https://youtu.be/w75_Wh9Aq_c?si=M5oN5Esp-ccz4Hw8" rel="noopener noreferer"
+        target="_blank">Link para o
+        vídeo no Youtube</a>
+
+    <footer>
+        <a href="tel:+0000000000">+00(00) 0000-0000</a>
+        <a href="mailto:suporte@suportando.sup">suporte@suportando.sup</a>
+    </footer>
+</body>
+
+</html>
