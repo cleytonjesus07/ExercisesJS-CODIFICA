@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Card</title>
+    <style>
+        .card {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 200px;
+            padding: 20px;
+            font-family: sans-serif;
+            border: 2px solid #000;
+            border-radius: .5em;
+            transition: opacity 300ms;
+            opacity: .5;
+        }
+
+        .card:hover {
+            opacity: 1;
+        }
+
+
+        .card .img {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 1em;
+            border: 1px solid;
+            border-radius: .5em;
+            overflow: hidden;
+        }
+
+        .card div>img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .card .title {
+            font-size: 1em;
+            font-weight: bolder;
+        }
+
+        .card .button {
+            margin-top: 10px;
+        }
+
+        .card .button button {
+            all: unset;
+            color: #fff;
+            background-color: rgb(255, 0, 0);
+            padding: .5em;
+            border-radius: .5em;
+            cursor: pointer;
+            opacity: .5;
+            transition: opacity 300ms;
+        }
+
+        .card .button button:hover {
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<!-- 
+
+<!-- Você está desenvolvendo uma loja virtual e precisa criar um card de produto que contenha:
+
+    Uma imagem do produto
+
+    O nome do produto
+
+    O preço
+
+    Um botão "Comprar"
+
+    Requisitos de estilo:
+
+    O card deve ter 200px de largura, com espaço interno (padding) de 20px para que o conteúdo não fique colado nas bordas.
+
+    Deve haver uma borda sólida de 2px ao redor do card.
+-->
+
+<body>
+    <div class="card">
+        <div class="img">
+            <img
+                src="https://cdn.vnda.com.br/1500x/grandestorcidas/2024/02/24/11_02_07_994_11_2_1_189_anyconvcom__166187800800.jpg?v=1708783333" />
+        </div>
+        <span class="title">Camisa SPFC - Feminina</span>
+        <span>R$1,00</span>
+        <div class="button"><button>Comprar produto</button></div>
+    </div>
+
+</body>
+
+</html>

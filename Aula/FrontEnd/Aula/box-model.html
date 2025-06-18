@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>box model</title>
+    <style>
+        body {
+            font-size: 20px;
+        }
+
+        div {
+            border: 1px solid black;
+        }
+
+        h2 {
+            border: inherit;
+            width: 100px;
+            height: 100px;
+            padding: 10px;
+            margin: 10px;
+            box-sizing: border-box;
+        }
+
+        div.dimensions h2 {
+            border: inherit;
+            height: 20pc;
+            font-size: 2rem;
+            width: 50%;
+            height: 100vmax;
+
+        }
+
+        div.dimensions {
+            font-size: 12px;
+        }
+
+        /* 
+         Existem unidades absolutas e relativas
+         fixas: px,pc,pt...
+         relativas: em(tem relação com o elemento pai),
+         rem(tem relação com o elemento raíz),
+        vh = altura da viewport,
+        vw = largura da viewport,
+        */
+
+        /* largura total = width + padding * 2 + border * 2 */
+        /* altura total = height + padding * 2 + border * 2 */
+    </style>
+</head>
+
+<body>
+    <div>
+        <h2>Conteúdo</h2>
+    </div>
+    <div class="dimensions">
+        <h2>Conteúdo</h2>
+    </div>
+</body>
+
+</html>
