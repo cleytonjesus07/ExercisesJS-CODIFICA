@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .menu {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background-color: #1e1e1e;
+            width: 100%;
+        }
+
+        .menu>div>span {
+            color: #FFF;
+            font-size: 2em;
+            font-weight: bolder;
+        }
+
+        .menu>nav>a {
+            all: unset;
+            color: #FFF;
+            opacity: .5;
+            margin: 0 .5em;
+            cursor: pointer;
+        }
+
+        .menu>nav>a:hover {
+            opacity: 1;
+            text-decoration: underline;
+        }
+
+        section {
+            display: flex;
+            justify-content: center;
+            justify-content: start;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding: 1em;
+        }
+
+        .card {
+            transition: transform 500ms, opacity 500ms;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid black;
+            width: 300px;
+            height: 300px;
+            opacity: .5;
+            transform: scale(.8);
+            cursor: pointer;
+        }
+
+        .card:hover {
+            transform: scale(1);
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="menu">
+        <div><span>LOGO</span></div>
+        <nav>
+            <a href="/">HOME</a>
+            <a href="/">PRODUTOS</a>
+            <a href="/">SOBRE</a>
+            <a href="/">CONTATO</a>
+        </nav>
+    </header>
+    <section>
+        <div class="card">
+            <span>Card 1</span>
+            <span>R$ 10,00</span>
+        </div>
+        <div class="card">
+            <span>Card 2</span>
+            <span>R$ 20,00</span>
+        </div>
+        <div class="card">
+            <span>Card 3</span>
+            <span>R$ 30,00</span>
+        </div>
+    </section>
+</body>
+
+</html>
