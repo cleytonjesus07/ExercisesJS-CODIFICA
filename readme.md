@@ -28,11 +28,11 @@ Para ter acesso aos exercícios vá:
 Listas/
 └── obrigatoria/
     └── Frontend/
-        ├── exercicio1/ 
-        ├── exercicio2/ 
-        ├── exercicio3/ 
-        ├── exercicio4/ 
-        ├── exercicio5/ 
-        ├── exercicio6/ 
-        └── exercicio7/ 
+        └── Lista3/
+            ├── exercicio 1/ 
+            ├── exercicio 2/ 
+            ├── exercicio 3/ 
+            ├── exercicio 4/ 
+            ├── exercicio 5/ 
+            ├── exercicio 6 e 7/ 
 ```
