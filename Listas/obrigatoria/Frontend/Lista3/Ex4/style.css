@@ -1,0 +1,29 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: #303030;
+    color: #fff;
+    margin: 1em;
+    padding: 1em;
+    border: 1px solid green;
+}
+
+main {
+    background-color: #e5e5e5;
+    color: #1d1d1d;
+    margin: 1em;
+    padding: 1em;
+    border: 1px solid green;
+}
+
+footer {
+    background-color: red;
+    color: yellow;
+    margin: 1em;
+    padding: 1em;
+    border: 1px solid green;
+}

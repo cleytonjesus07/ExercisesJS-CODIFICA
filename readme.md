@@ -19,3 +19,20 @@ pnpm obrigatoria-lista1
 npm run obrigatoria-lista2
 # ou
 pnpm obrigatoria-lista2
+```
+# Lista de Exercícios 3 - Desenvolvimento Web Básico
+
+Para ter acesso aos exercícios vá:
+
+```bash
+Listas/
+└── obrigatoria/
+    └── Frontend/
+        ├── exercicio1/ 
+        ├── exercicio2/ 
+        ├── exercicio3/ 
+        ├── exercicio4/ 
+        ├── exercicio5/ 
+        ├── exercicio6/ 
+        └── exercicio7/ 
+```

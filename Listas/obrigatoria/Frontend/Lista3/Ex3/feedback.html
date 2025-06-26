@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback</title>
+</head>
+
+<body>
+    <form action="./">
+        <label for="nome">
+            Nome:
+            <input name="nome" type="text">
+        </label>
+        <label for="e-mail">
+            E-Mail
+            <input name="e-mail" type="email">
+        </label>
+        <label for="endereco">
+            Endereço completo:
+            <input name="endereco" type="text">
+        </label>
+        <label for="">
+            Tipo de Feedback:
+            <select id="tipo_feedback" name="tipo_feedback">
+                <option value="">Selecione uma opção</option>
+                <option value="elogio">Elogio</option>
+                <option value="sugestao">Sugestão de Melhoria</option>
+                <option value="problema">Relato de Problema</option>
+                <option value="duvida">Dúvida</option>
+                <option value="critica">Crítica Construtiva</option>
+            </select>
+        </label>
+        <label for="campo_feedback">
+            <textarea name="campo_feedback" id="campo_feedback" placeholder="Insira o seu feedback..."></textarea>
+        </label>
+        <input name="btn_envio" value="Enviar formulário" type="button">
+    </form>
+</body>
+
+</html>

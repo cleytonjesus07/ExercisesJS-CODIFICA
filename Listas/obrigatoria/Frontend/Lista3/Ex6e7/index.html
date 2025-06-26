@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria de imagens e Menu Hamburguer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        main {
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            max-width: 1200px;
+        }
+
+        @media (max-width: 768px) {
+            .grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .grid>div {
+            position: relative;
+            min-height: 300px;
+            aspect-ratio: 1;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            box-shadow: -2px 2px black;
+            transition: all 0.5s ease;
+            overflow: hidden;
+        }
+
+        .grid>div>span {
+            position: absolute;
+            bottom: -100%;
+            width: 100%;
+            background-color: #1e1e1e6c;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            padding: 1em;
+            transition: bottom 300ms ease-in-out;
+        }
+
+        .grid>div:hover {
+            transform: scale(1.05);
+            box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.3);
+            z-index: 1;
+        }
+
+        .grid>div:hover>span {
+            bottom: 0;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            background-color: #1e1e1e;
+            color: #fff;
+            padding: 1em;
+        }
+
+        header>nav>a {
+            all: unset;
+            margin: 0 1em;
+            opacity: .5;
+            cursor: pointer;
+        }
+
+        header>nav>a:hover {
+            text-decoration: underline;
+            opacity: 1;
+        }
+
+        .menu-hamburguer {
+            all: unset;
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+            cursor: pointer;
+            opacity: .5;
+            display: none;
+        }
+
+        .menu-hamburguer:hover {
+            opacity: 1;
+        }
+
+        .menu-hamburguer>div {
+            width: 15px;
+            height: 2px;
+            background-color: white;
+        }
+
+        .btn_close {
+            display: none;
+        }
+
+        input[type="checkbox"] {
+            display: none;
+        }
+
+        @media(max-width: 600px) {
+            .menu-hamburguer {
+                display: flex;
+            }
+
+            header>nav {
+                position: fixed;
+                width: 100%;
+                top: 0;
+                bottom: 0;
+                right: -100%;
+                z-index: 1;
+                background-color: #1e1e1e;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding-top: 5em;
+                gap: 1em;
+                transition: right 300ms ease-in-out;
+            }
+
+            .btn_close {
+                all: unset;
+                position: absolute;
+                right: 10px;
+                top: 20px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                width: 30px;
+                height: 30px;
+            }
+
+            .btn_close>div {
+                width: 100%;
+                height: 2px;
+                background-color: #fff;
+                transition: transform 300ms ease-in-out;
+            }
+
+            .btn_close>div:nth-child(1) {
+                transform: rotate(0deg);
+            }
+
+            .btn_close>div:nth-child(2) {
+                transform: rotate(0deg);
+            }
+
+            .btn_close:hover>div {
+                background-color: red;
+            }
+
+            .btn_close:hover>div:nth-child(1) {
+                transform: rotate(50deg);
+            }
+
+            .btn_close:hover>div:nth-child(2) {
+                transform: rotate(-50deg);
+            }
+
+            input[type="checkbox"]:checked~nav {
+                right: 0;
+            }
+
+
+            header>nav::before {
+                content: "Menu Lateral";
+                display: inline;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h2>Galeria de Personagens de Animes e Jogos</h2>
+        <input id="check" name="check" type="checkbox" />
+        <nav>
+            <label for="check" class="btn_close">
+                <div></div>
+                <div></div>
+            </label>
+
+            <a href="./">Home</a>
+            <a href="./">Galeria</a>
+            <a href="./">Animes e Jogos</a>
+            <a href="./">Contato</a>
+        </nav>
+        <label for="check" class="menu-hamburguer">
+            <div></div>
+            <div></div>
+            <div></div>
+        </label>
+    </header>
+    <main>
+        <div class="grid">
+            <div style="background-image: url(./images/goku.webp);"><span>Goku - Dragon Ball Z</span></div>
+            <div style="background-image: url(./images/heather.jpg);"><span>Heather Mason - Silent Hill 3</span></div>
+            <div style="background-image: url(./images/ichigo.webp);"><span>Ichigo Kurosaki - Bleach</span></div>
+            <div style="background-image: url(./images/kratos.jpg);"><span>Kratos - God Of War</span></div>
+            <div style="background-image: url(./images/leon.jpg);"><span>Leon Scott Kennedy - Resident Evil 4</span>
+            </div>
+            <div style="background-image: url(./images/light.jpg);"><span>Light Yagami - Death Note</span></div>
+            <div style="background-image: url(./images/mario.webp);"><span>Mario - Mario Bros.</span></div>
+            <div style="background-image: url(./images/naruto.png);"><span>Naruto Uzumaki- Naruto Shippuden</span></div>
+        </div>
+    </main>
+</body>
+
+</html>

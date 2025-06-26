@@ -1,0 +1,92 @@
+como adicionar texto com css Adicionando Texto com CSS Embora o CSS seja principalmente usado para estilização (e não para adicionar conteúdo),
+existem algumas maneiras de inserir texto usando CSS puro: 1. Usando o pseudo-elemento ::before ou ::after css .elemento::before {
+    content: "Texto adicionado antes";
+    display: inline;
+}
+
+.elemento::after {
+    content: "Texto adicionado depois";
+    display: inline;
+}
+
+2. Usando a propriedade content com atributos css .elemento::after {
+    content: attr(data-texto);
+}
+
+html <div class="elemento" data-texto="Texto do atributo"></div>Limitações importantes: O texto adicionado com CSS não é selecionável na maioria dos navegadores Não é acessível para leitores de tela Não substitui o conteúdo HTML adequado Recomendação: O método mais apropriado para adicionar texto é usando HTML: html <p>Este é o texto que quero exibir</p>E usar CSS apenas para estilização: css p {
+    color: blue;
+    font-size: 16px;
+    font-family: Arial;
+}
+
+Use os métodos CSS para adicionar texto apenas para fins decorativos ou quando realmente necessário para estilização avançada. como abrir e fechar menu lateral com checkbox css Menu Lateral com Checkbox (Sem JavaScript) Você pode criar um menu lateral que abre e fecha usando apenas CSS e um checkbox. Aqui está como fazer: HTML html <input type="checkbox" id="menu-toggle" class="menu-toggle"><label for="menu-toggle" class="menu-button">☰ Menu</label><nav class="sidebar"><ul><li><a href="#">Item 1</a></li><li><a href="#">Item 2</a></li><li><a href="#">Item 3</a></li></ul></nav><main class="content">< !-- Conteúdo principal aqui --></main>CSS css
+
+/* Esconde o checkbox */
+.menu-toggle {
+    display: none;
+}
+
+/* Estilo do botão do menu */
+.menu-button {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 1001;
+    padding: 10px;
+    background: #333;
+    color: white;
+    border-radius: 4px;
+}
+
+/* Estilo do menu lateral */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background: #333;
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+/* Estilo do conteúdo principal */
+.content {
+    margin-left: 0;
+    transition: margin-left 0.3s ease;
+    padding: 20px;
+}
+
+/* Quando o checkbox está marcado, mostra o menu */
+.menu-toggle:checked~.sidebar {
+    left: 0;
+}
+
+.menu-toggle:checked~.content {
+    margin-left: 250px;
+}
+
+/* Estilos opcionais para os itens do menu */
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 60px;
+}
+
+.sidebar li a {
+    display: block;
+    padding: 10px 20px;
+    color: white;
+    text-decoration: none;
+}
+
+.sidebar li a:hover {
+    background: #555;
+}
+
+Como funciona: O checkbox fica invisível (display: none) O label (menu-button) atua como o botão para abrir/fechar Quando o checkbox está marcado (:checked),
+o menu desliza para dentro O conteúdo principal se desloca para dar espaço ao menu A transição CSS cria uma animação suave Você pode personalizar cores,
+tamanhos e efeitos conforme necessário. Essa técnica é totalmente responsiva e não requer JavaScript. New chat Message DeepSeek AI-generated,
+for reference only
