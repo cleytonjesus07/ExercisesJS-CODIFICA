@@ -1,0 +1,186 @@
+:root {
+    --cor-primaria: #111418;
+    --cor-secundaria: #1B2127;
+    --cor-fonte: #fff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: var(--cor-fonte);
+    font-family: "Manrope", sans-serif;
+    font-size: 1em;
+}
+
+body {
+    background-color: var(--cor-primaria);
+}
+
+/* HEADER */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: var(--cor-fonte) solid 1px;
+    padding: 1em;
+}
+
+header>div>p {
+    font-size: .8em;
+    margin-left: 3em;
+    opacity: .8;
+}
+
+header>nav {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+header>nav>a {
+    all: unset;
+    opacity: .5;
+    cursor: pointer;
+    transition: opacity 500ms ease;
+}
+
+header>nav>a:hover {
+    opacity: 1;
+}
+
+header>nav>img {
+    width: 30px;
+    height: auto;
+    border-radius: 100%;
+}
+
+/* ------------------------------------------------------- */
+/* SOBRE */
+main {
+    display: grid;
+    grid-template-columns: 1fr 20%;
+    gap: 10px;
+    min-height: 100px;
+}
+
+main>aside {
+    background-color: var(--cor-secundaria);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 1em;
+}
+
+main>aside>h2 {
+    font-size: 1.5em;
+}
+
+main>aside>div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1em;
+    gap: 10px;
+}
+
+main>aside>div a {
+    all: unset;
+    font-size: .9em;
+    opacity: .5;
+    cursor: pointer;
+    transition: opacity 500ms ease;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+main>aside>div a:hover {
+    opacity: 1;
+}
+
+.sessao {
+    padding: 0 1em;
+    background-color: var(--cor-secundaria);
+    margin: 10px 0;
+    border-radius: 10px;
+    min-height: calc(100vh/3);
+
+
+}
+
+.sessao>p {
+    font-size: .9em;
+    opacity: .9;
+}
+
+.sessao>h2 {
+    font-size: 1.5em;
+}
+
+/* --------------------------------- */
+/* Habilidades */
+.sessao#habilidades>div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 1em 0;
+}
+
+.sessao#habilidades>div>img {
+    width: 50px;
+    height: 50px;
+}
+
+/* ---------------------------------- */
+
+.sessao#projetos {
+    padding: 1em;
+}
+
+.sessao#projetos>div {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 1em 0;
+}
+
+.sessao#projetos a {
+    flex: 1;
+    all: unset;
+    transition: transform 500ms ease, opacity 500ms ease;
+    cursor: pointer;
+    opacity: .5;
+    width: 200px;
+    height: 100px;
+}
+
+
+
+.sessao#projetos a:hover {
+    transform: scale(1.1);
+    z-index: 1;
+    opacity: 1;
+}
+
+.sessao#projetos>div>a>figure>figcaption {
+    text-align: center;
+    font-size: .89em;
+}
+
+.sessao#projetos img {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+    object-position: top;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    font-size: .8em;
+    max-height: 100px;
+
+}
