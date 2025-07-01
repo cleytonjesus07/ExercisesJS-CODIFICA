@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <script defer src="./script.js"></script>
+    <title>Lista de compras</title>
+</head>
+
+<body>
+
+    <main>
+        <div class="container">
+            <div class="container-inputs">
+                <select id="filtro" oninput="filtrarItens(this.value)">
+                    <option value=1>comprados</option>
+                    <option value=0 selected>pendentes</option>
+                </select>
+                <input id="input" type="search" placeholder="Digite aqui o item">
+            </div>
+            <button id="add">Adicionar</button>
+            <button id="clear" class="clear">Limpar</button>
+        </div>
+        <span class="qtnd">Quantidade: 0</span>
+        <ul id="lista_itens"></ul>
+    </main>
+</body>
+
+</html>
