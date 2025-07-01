@@ -79,3 +79,8 @@ main>ul {
     flex-direction: column;
     gap: .5em;
 }
+
+#aviso {
+    font-size: small;
+    font-weight: bolder;
+}

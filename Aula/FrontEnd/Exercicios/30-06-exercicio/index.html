@@ -14,14 +14,15 @@
     <main>
         <div class="container">
             <div class="container-inputs">
-                <select id="filtro" oninput="filtrarItens(this.value)">
-                    <option value=1>comprados</option>
-                    <option value=0 selected>pendentes</option>
-                </select>
+                <select id="filtro" oninput="filtrarItens(this.value)"></select>
                 <input id="input" type="search" placeholder="Digite aqui o item">
             </div>
             <button id="add">Adicionar</button>
             <button id="clear" class="clear">Limpar</button>
+            <div class="container-inputs">
+                <select title="Só é permitido filtrar quando tiver mais de 1 item na lista" disabled id="order"
+                    oninput="ordenarItens(this.value)"></select>
+            </div>
         </div>
         <span class="qtnd">Quantidade: 0</span>
         <ul id="lista_itens"></ul>
