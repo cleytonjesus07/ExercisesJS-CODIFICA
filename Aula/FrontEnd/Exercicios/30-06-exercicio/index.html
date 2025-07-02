@@ -18,13 +18,16 @@
                 <input id="input" type="search" placeholder="Digite aqui o item">
             </div>
             <button id="add">Adicionar</button>
-            <button id="clear" class="clear">Limpar</button>
+            <button id="clear" class="clear">Limpar lista</button>
             <div class="container-inputs">
-                <select title="Só é permitido filtrar quando tiver mais de 1 item na lista" disabled id="order"
-                    oninput="ordenarItens(this.value)"></select>
+                <select disabled id="order" oninput="ordenarItens(this.value)"></select>
             </div>
         </div>
-        <span class="qtnd">Quantidade: 0</span>
+        <span class="qtnd">
+            <span id="total_info">Total: 0</span>
+            <span id="purchased_info">Comprados: 0</span>
+            <span id="pending_info">Pendentes: 0</span>
+        </span>
         <ul id="lista_itens"></ul>
     </main>
 </body>

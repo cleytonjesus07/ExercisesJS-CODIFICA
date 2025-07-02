@@ -5,12 +5,22 @@ const lista_itens = document.getElementById("lista_itens");
 const input = document.getElementById("input");
 const ordenador = document.getElementById("order");
 const filtro = document.getElementById("filtro");
+const WARNING = [
+    "Para filtrar, adicione mais de um item à sua lista.",
+    "Que tal adicionar mais alguns itens para poder organizá-los?",
+    "Sua lista já está vazia, adicione algo novo!",
+    "**Ops! Por favor, digite o item que você quer adicionar.**"
+];
 const KEY_localStorage = "lista";
 const data = {
     escolha_ordenada: capturarDados().escolha_ordenada || null,
     escolha_filtrada: capturarDados().escolha_filtrada || null,
     lista: capturarDados().lista || []
 }
+
+input.addEventListener("keyup", function ({ target: { value } }) {
+    bloquearBotaoAdicionar(value)
+})
 function salvarDados(data) {
     localStorage.setItem(KEY_localStorage, JSON.stringify(data));
 }
@@ -21,8 +31,10 @@ function capturarDados() {
 }
 
 btn_clear.addEventListener("click", function () {
-    if (!input.value) return;
-    input.value = "";
+    const resposta = confirm("Tem certeza que deseja excluir todas as suas tarefas?")
+    if (!resposta) return;
+    data["lista"] = [];
+    renderizarLista(data.lista)
 });
 
 btn_add.addEventListener("click", function () {
@@ -35,22 +47,69 @@ btn_add.addEventListener("click", function () {
     }
     data.lista.push(newItem);
     input.value = "";
+    bloquearBotaoAdicionar(input.value)
     renderizarLista(data.lista);
 });
 
 function atualizarQuantidade(length) {
-    const qtnd_element = document.getElementsByClassName("qtnd")[0];
-    qtnd_element.textContent = `Quantidade: ${length}`;
+    const qtnd_element = document.getElementById("total_info");
+    qtnd_element.textContent = `Total: ${length} |`;
 }
+function atualizarQuantidadeCompradosEpendentes(lista) {
+    const total_comprado = lista.filter((a) => a.purchased === true).length;
+    const total_pendente = lista.filter((a) => a.purchased === false).length;
+    const qtnd_total = document.getElementById("total_info");
+    const purchased_total = document.getElementById("purchased_info");
+    const pending_total = document.getElementById("pending_info");
+    qtnd_total.textContent = `Total: ${length}`;
+    purchased_total.textContent = `Comprados: ${total_comprado} |`;
+    pending_total.textContent = `Pendentes: ${total_pendente}`;
+}
+
 
 function definirEstadoDoItem(index, status) {
     data.lista[index].purchased = status;
     renderizarLista(data.lista);
 }
 
+function checarSelects() {
+    if (data.lista.length === 0) {
+        btn_clear.setAttribute("disabled", "")
+        btn_clear.setAttribute("title", WARNING[2])
+    }
+    else {
+        btn_clear.removeAttribute("disabled")
+        btn_clear.removeAttribute("title");
+    }
+
+    if (data.lista.length <= 1) {
+        ordenador.setAttribute("disabled", "")
+        ordenador.setAttribute("title", WARNING[1])
+    } else {
+        ordenador.removeAttribute("disabled")
+        ordenador.removeAttribute("title");
+    }
+    if (data.lista.length <= 1) {
+        filtro.setAttribute("disabled", "")
+        filtro.setAttribute("title", WARNING[0])
+    } else {
+        filtro.removeAttribute("disabled")
+        filtro.removeAttribute("title");
+    }
+}
+
+function bloquearBotaoAdicionar(value) {
+    if (!value.trim()) {
+        btn_add.setAttribute("disabled", "");
+        btn_add.setAttribute("title", WARNING[3]);
+    } else {
+        btn_add.removeAttribute("disabled");
+        btn_add.removeAttribute("title");
+    }
+}
+
 function renderizarLista(arrItens) {
-    (data.lista.length <= 1) ? ordenador.setAttribute("disabled", "") : ordenador.removeAttribute("disabled");
-    (data.lista.length <= 1) ? filtro.setAttribute("disabled", "") : filtro.removeAttribute("disabled");
+    checarSelects();
     lista_itens.innerHTML = "";
     arrItens.forEach((item, index) => {
         lista_itens.insertAdjacentHTML("beforeend", `
@@ -61,6 +120,7 @@ function renderizarLista(arrItens) {
             </li>
         `);
     })
+    atualizarQuantidadeCompradosEpendentes(data.lista);
     atualizarQuantidade(data.lista.length);
     data["lista"] = data.lista;
     salvarDados(data);
@@ -123,8 +183,8 @@ function ordenarItens(value) {
 }
 
 function initApp() {
-    (data.lista.length <= 1) ? ordenador.setAttribute("disabled", "") : ordenador.removeAttribute("disabled");
-    (data.lista.length <= 1) ? filtro.setAttribute("disabled", "") : filtro.removeAttribute("disabled");
+    checarSelects();
+    btn_add.setAttribute("disabled", "")
     const dadosEscolha = {
         filtro: capturarDados().escolha_filtrada,
         ordenador: capturarDados().escolha_ordenada
@@ -152,7 +212,6 @@ function initApp() {
             opt.innerText = value;
             if (dadosEscolha.ordenador == opt.value) opt.setAttribute("selected", "")
             optgroup.append(opt);
-
         })
         ordenador.append(optgroup)
     })

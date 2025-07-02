@@ -1,86 +1,356 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;700&family=Pacifico&display=swap');
+
+:root {
+    --primary-color: #7986CB;
+    /* Lavender Blue */
+    --secondary-color: #FFAB91;
+    /* Soft Peach */
+    --background-color: #E0F2F7;
+    /* Light Sky Blue */
+    --card-background: #FFFFFF;
+    --text-color: #424242;
+    /* Dark Grey */
+    --light-text-color: #757575;
+    /* Medium Grey */
+    --border-color: #CFD8DC;
+    /* Light Grey Blue */
+    --danger-color: #EF9A9A;
+    /* Soft Red */
+    --shadow-color: rgba(0, 0, 0, 0.08);
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: sans-serif;
 }
 
 body {
+    font-family: 'IBM Plex Sans', sans-serif;
+    /* Readable, clean font */
+    background-color: var(--background-color);
     display: flex;
-    flex-direction: column;
     justify-content: center;
-    align-items: center;
-    padding: 2em;
+    align-items: flex-start;
+    /* Alinha ao topo */
+    min-height: 100vh;
+    padding: 30px;
+    color: var(--text-color);
+    line-height: 1.6;
 }
 
 main {
+    background-color: var(--card-background);
+    border-radius: 15px;
+    /* Mais arredondado para um toque suave */
+    box-shadow: 0 8px 25px var(--shadow-color);
+    /* Sombra suave */
+    padding: 35px;
+    width: 100%;
+    max-width: 500px;
     display: flex;
     flex-direction: column;
-    gap: 1em;
+    gap: 25px;
+    /* Mais espaço entre os elementos */
+    border: 1px solid var(--border-color);
+    /* Borda sutil */
 }
+
+/* --- Container Inputs --- */
 
 .container {
     display: flex;
+    flex-direction: column;
+    justify-content: center;
     gap: 1em;
 }
 
 .container-inputs {
     display: flex;
-    gap: 1em;
+    gap: 12px;
+    /* Mais espaço */
+    flex-wrap: wrap;
+    align-items: center;
 }
 
-select {
-    min-width: 200px;
+.container-inputs select,
+.container-inputs input[type="search"] {
+    flex: 1;
+    padding: 12px 18px;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    /* Mais arredondado */
+    font-size: 1rem;
+    color: var(--text-color);
+    min-width: 150px;
+    background-color: #F8F8F8;
+    /* Fundo suave para inputs */
+    transition: all 0.3s ease;
 }
 
-input[type="search"] {
-    all: unset;
-    border-bottom: 2px solid #000;
+.container-inputs select:focus,
+.container-inputs input[type="search"]:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(121, 134, 203, 0.2);
+    /* Sombra suave ao focar */
+    background-color: white;
 }
 
-input[type="checkbox"] {
-    /* all: unset; */
-    width: 10px;
-    height: 10px;
-    border: 2px solid #000;
-    border-radius: 1em;
+/* Estilo para o placeholder */
+.container-inputs input::placeholder {
+    color: var(--light-text-color);
+    opacity: 0.8;
+    /* Levemente mais claro */
 }
 
+/* --- Buttons --- */
 button {
-    all: unset;
-    border: 1px solid #000;
-    padding: .5em 1em;
-    border-radius: .5em;
-    opacity: .6;
+    padding: 13px 25px;
+    /* Um pouco mais de padding */
+    border: none;
+    border-radius: 10px;
+    font-size: 1.05rem;
+    font-weight: 700;
     cursor: pointer;
-    transition: opacity 300ms ease;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    text-transform: capitalize;
+    /* Capitaliza a primeira letra */
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Sombra para botões */
 }
 
-button:hover {
-    opacity: 1;
+/* Disabled state for all buttons */
+button:disabled,
+select:disabled {
+    background-color: var(--border-color);
+    /* A light, neutral color */
+    color: var(--light-text-color);
+    /* Muted text color */
+    cursor: not-allowed;
+    /* Shows a 'no entry' cursor */
+    box-shadow: none;
+    /* Remove shadows */
+    transform: none;
+    /* No transform on hover */
+    opacity: 0.7;
+    /* Slightly faded */
 }
 
-#add {
-    background-color: greenyellow;
+button:disabled:hover {
+    background-color: var(--border-color);
+    /* Keep same background on hover */
+    box-shadow: none;
+    /* No shadow on hover */
+    transform: none;
+    /* Ensure no movement */
 }
 
-.clear {
-    background-color: tomato;
+button#add {
+    background-color: var(--primary-color);
+    color: white;
 }
 
+button#add:hover {
+    background-color: #6272B5;
+    /* Tom um pouco mais escuro */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+button#clear {
+    background-color: var(--danger-color);
+    color: var(--text-color);
+    /* Texto escuro para contrastar */
+}
+
+button#clear:hover {
+    background-color: #D38484;
+    /* Tom mais escuro */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* --- Info Spans (Total, Purchased, Pending) --- */
 .qtnd {
-    font-size: small;
-    font-weight: bolder;
+    display: flex;
+    justify-content: space-around;
+    padding: 18px 0;
+    border-top: 1px dashed var(--border-color);
+    /* Linha tracejada suave */
+    border-bottom: 1px dashed var(--border-color);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--light-text-color);
 }
 
-main>ul {
+.qtnd span {
+    text-align: center;
+    flex: 1;
+}
+
+#total_info {
+    color: var(--primary-color);
+}
+
+#purchased_info {
+    color: var(--secondary-color);
+}
+
+#pending_info {
+    color: var(--text-color);
+}
+
+/* --- Item List --- */
+#lista_itens {
     list-style: none;
     display: flex;
     flex-direction: column;
-    gap: .5em;
+    gap: 10px;
+    max-height: 400px;
+    overflow-y: auto;
+    padding-right: 8px;
 }
 
-#aviso {
-    font-size: small;
-    font-weight: bolder;
+/* Scrollbar sutil */
+#lista_itens::-webkit-scrollbar {
+    width: 8px;
+}
+
+#lista_itens::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+#lista_itens::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    /* Cor suave do border */
+    border-radius: 10px;
+}
+
+#lista_itens::-webkit-scrollbar-thumb:hover {
+    background: var(--light-text-color);
+}
+
+#lista_itens li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 18px;
+    background-color: #FDFDFD;
+    /* Quase branco */
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    box-shadow: 0 3px 10px var(--shadow-color);
+    /* Sombra mais sutil */
+    transition: all 0.3s ease;
+}
+
+#lista_itens li:hover {
+    background-color: #FEFEFE;
+    transform: translateY(-1px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
+}
+
+#lista_itens li.purchased {
+    background-color: #E8F5E9;
+    /* Verde claro muito suave */
+    border-color: #A5D6A7;
+    /* Verde pastel */
+    text-decoration: line-through;
+    color: var(--light-text-color);
+    opacity: 0.8;
+    font-style: italic;
+    /* Itálico para items comprados */
+}
+
+#lista_itens li span {
+    flex-grow: 1;
+    font-size: 1.05rem;
+    cursor: pointer;
+}
+
+#lista_itens li .actions {
+    display: flex;
+    gap: 6px;
+}
+
+#lista_itens li .actions button {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 6px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    width: 36px;
+    /* Tamanho maior para botões de ação */
+    height: 36px;
+    box-shadow: none;
+    /* Remove a sombra padrão do botão */
+}
+
+#lista_itens li .actions button.edit-btn {
+    color: var(--primary-color);
+}
+
+#lista_itens li .actions button.edit-btn:hover {
+    background-color: rgba(121, 134, 203, 0.1);
+    transform: scale(1.1);
+}
+
+#lista_itens li .actions button.delete-btn {
+    color: var(--danger-color);
+}
+
+#lista_itens li .actions button.delete-btn:hover {
+    background-color: rgba(239, 154, 154, 0.1);
+    transform: scale(1.1);
+}
+
+/* Responsividade */
+@media (max-width: 520px) {
+    main {
+        padding: 25px;
+        margin: 10px;
+        gap: 18px;
+    }
+
+    .container-inputs {
+        flex-direction: column;
+
+    }
+
+    .container-inputs select,
+    .container-inputs input[type="search"] {
+        width: 100%;
+    }
+
+    button {
+        width: 100%;
+    }
+
+    .qtnd {
+        flex-direction: column;
+        gap: 8px;
+        font-size: 0.95rem;
+    }
+}
+
+/* Estilo para um toque 'lofi' no título (se você quiser adicionar um) */
+/* Se quiser usar um título, adicione um H1 no seu HTML, por exemplo:
+   <h1 class="lofi-title">Sua Lista de Compras Relax</h1>
+*/
+.lofi-title {
+    font-family: 'Pacifico', cursive;
+    /* Fonte cursiva para um toque mais pessoal */
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.05);
 }
