@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resident Evil 4 - Missão Interativa</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- HEADER: Responsável por ser o cabeçalho da página, nele há um botão e links de navegação -->
+    <header>
+        <div class="container">
+            <button id="navToggle" class="nav-toggle" aria-label="Abrir Menu">☣</button>
+            <nav id="navMenu" class="nav">
+                <ul>
+                    <li><a href="#">Início</a></li>
+                    <li><a href="#">Missões</a></li>
+                    <li><a href="#">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- SEÇAO: Divide em partes, por seção o conteúdo de um site, nele há div outra tag que tem como função ser um container
+        H1:Titulo principal de uma página ou seção
+        p:Parágrafo.
+        a:Link de ancôra, uma forma de fazer o usuário navegar entre arquivos html ou elementos que possuam o id referenciado  
+    -->
+    <section id="hero" class="hero">
+        <div class="container">
+            <h1>Sobreviva ao Pesadelo</h1>
+            <p>Embarque na missão de resgate mais sombria já enfrentada por Leon S. Kennedy.</p>
+            <a href="#" class="btn">Iniciar Missão</a>
+        </div>
+    </section>
+
+    <!-- H3:É uma tag da família das títulos principais porém em um nível inferior ap 1 e 2 -->
+    <section id="services" class="services container">
+        <h2>Equipamentos e Suporte</h2>
+        <div class="cards">
+            <div class="card">
+                <h3>Armas de Elite</h3>
+                <p>Obtenha acesso a armamentos como Red9, Broken Butterfly e o fuzil semiautomático.</p>
+            </div>
+            <div class="card">
+                <h3>Operações Táticas</h3>
+                <p>Explore aldeias e castelos infestados com precisão e estratégia.</p>
+            </div>
+            <div class="card">
+                <h3>Contato com o Mercador</h3>
+                <p>Compre, venda e melhore seu arsenal com o icônico “What're ya buyin'?”</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- form:Formulário, uma forma de enviar dados para o servidor.
+        label:Uma tag que costuma rotular/identificar tags inputs
+        input:Campo para ser inserir dados/valores
+        textarea:campo especialmente para textos extensos 
+    -->
+    <section id="contact" class="contact container">
+        <h2>Enviar Relatório</h2>
+        <form id="contactForm">
+            <div class="form-group">
+                <label for="name">Nome do Operador</label>
+                <input type="text" id="name" name="name" required>
+                <span class="error-msg"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="email">E-mail do Operador</label>
+                <input type="email" id="email" name="email" required>
+                <span class="error-msg"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="message">Descrição da Missão</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+                <span class="error-msg"></span>
+            </div>
+
+            <button type="submit" class="btn">Enviar Relatório</button>
+        </form>
+    </section>
+
+    <!-- footer:cabeçalho de uma páginaweb
+        &copy: código de copyright 
+    -->
+    <button id="scrollTop" onclick="getTop()">
+        ⬆️
+    </button>
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Operação Biohazard. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
