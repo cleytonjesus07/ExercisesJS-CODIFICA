@@ -1,137 +1,123 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" as="style" onload="this.rel='stylesheet'"
-        href="https://fonts.googleapis.com/css2?display=swap&amp;family=Manrope%3Awght%40400%3B500%3B700%3B800&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900" />
-    <link rel="stylesheet" href="./styles.css">
-    <title>Atividade 4: Página de Perfil Pessoal</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cleyton Jesus</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
     <header>
-        <div>
-            <h1>Meu Perfil Pessoal do Github</h1>
-            <p>🎨✨ "Onde o Código Encontra a Arte"</p>
-        </div>
+        <div class="logo">Cleyton Jesus</div>
         <nav>
-            <a href="#sobre-mim">Sobre Mim</a>
-            <a href="#habilidades">Habilidades</a>
-            <a href="#projetos">Projetos</a>
+            <a href="#dev">Projetos</a>
+            <a href="#art">Artes</a>
+            <a href="#sobre">Sobre</a>
             <a href="#contato">Contato</a>
-            <img src="./images/pfp.jpg" alt="minha foto" />
         </nav>
-
     </header>
-    <main>
-        <div>
-            <section class="sessao" id="sobre-mim">
-                <h2>Sobre:</h2>
-                <p>
-                    Sou um estudante de programação e ilustrador apaixonado por desenvolvimento web, onde minha mente
-                    lógica e meu lado artístico se encontram. Adoro transformar ideias em código e pixels, criando
-                    experiências digitais que unem funcionalidade e design. Meu objetivo? Construir projetos que não só
-                    funcionem perfeitamente, mas também encantem os olhos.
-                </p>
-            </section>
-            <section class="sessao" id="habilidades">
-                <h2>Habilidades:</h2>
-                <div>
-                    <!-- VS Code -->
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg"
-                        alt="VS Code" />
-                    <!-- HTML5 -->
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
-                        alt="HTML5" />
-                    <!-- CSS3 -->
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3" />
-                    <!-- JavaScript -->
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
-                        alt="JavaScript" />
-                    <!-- React -->
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
-                        alt="React" />
-                    <!-- Next.js -->
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg"
-                        alt="Next.js" />
-                    <!-- Node.js -->
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
-                        alt="Node.js" />
-                    <!-- GitHub -->
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
-                        alt="GitHub" style="background-color: #fff;border-radius: 100%;" />
-                    <!-- Figma -->
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg"
-                        alt="Figma" />
+
+    <section class="hero">
+        <h1>Arte & Código</h1>
+        <p id="slogan">"Construindo Experiências com Cores e Comandos."</p>
+    </section>
+
+    <section class="section" id="dev">
+        <h2 class="section-title">Projetos Tech</h2>
+        <div class="grid">
+            <a href="https://playlistify-three.vercel.app/">
+                <div class="card">
+                    <img src="./images/projeto1.jpeg" alt="Fanart" />
+                    <h3>Playlistify</h3>
+                    <span>NextJS · Supabase</span>
                 </div>
-            </section>
-            <section class="sessao" id="projetos">
-                <h2>Principais projetos:</h2>
-                <div>
-                    <a href="" rel="noopener noreferrer">
-                        <figure>
-                            <img src="./images/projeto1.jpeg" alt="Playlistify">
-                            <figcaption>Playlistify</figcaption>
-                        </figure>
-                    </a>
-                    <a href="" rel="noopener noreferrer">
-                        <figure>
-                            <img src="./images/projeto2.png" alt="Playlistify">
-                            <figcaption>Player de video customizado</figcaption>
-                        </figure>
-                    </a>
-                    <a href="" rel="noopener noreferrer">
-                        <figure>
-                            <img src="./images/projeto3.png" alt="Playlistify">
-                            <figcaption>Landing Page Playstation 5</figcaption>
-                        </figure>
-                    </a>
-                    <a href="" rel="noopener noreferrer">
-                        <figure>
-                            <img src="./images/projeto4.png" alt="Playlistify">
-                            <figcaption>Player de música</figcaption>
-                        </figure>
-                    </a>
+            </a>
+            <a href="https://cleytonjesus07.github.io/PlayerDeVideoCustomizado/">
+                <div class="card">
+                    <img src="./images/projeto2.png" alt="Fanart" />
+                    <h3>Player de vídeo - customizado</h3>
+                    <span>HTML · CSS · JS</span>
                 </div>
-            </section>
+            </a>
+            <a href="https://ps5-landing-page.vercel.app/">
+                <div class="card">
+                    <img src="./images/projeto3.png" alt="Fanart" />
+                    <h3>Landing Page - Playstation 5</h3>
+                    <span>NextJS</span>
+                </div>
+            </a>
+            <a href="https://cleytonjesus07.github.io/customSoundPlayer/">
+                <div class="card">
+                    <img src="./images/projeto4.png" alt="Fanart" />
+                    <h3>Player de música customizado</h3>
+                    <span>HTML · CSS · JS</span>
+                </div>
+            </a>
         </div>
-        <aside class="social-media" id="contato">
-            <h2>Contato</h2>
-            <div>
-                <a href="https://www.linkedin.com/in/cleytonjesus07/" rel="noopener noreferrer">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                        <rect x="2" y="9" width="4" height="12"></rect>
-                        <circle cx="4" cy="4" r="2"></circle>
-                    </svg>
-                    LinkedIN
-                </a>
-                <a href="https://github.com/cleytonjesus07" rel="noopener noreferrer">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path
-                            d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
-                        </path>
-                    </svg>
-                    Github
-                </a>
-                <a href="https://www.instagram.com/cleyton_jesus07/" rel="noopener noreferrer">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-                    </svg>
-                    Instagram
-                </a>
+    </section>
+
+    <section class="section" id="art">
+        <h2 class="section-title">Ilustrações</h2>
+        <div class="grid">
+            <div class="card">
+                <img src="./images/ilustration1.jpg" alt="Fanart" />
+                <h3>Apocalipse Zumbi</h3>
+                <span>Medibang Paint PRO, 2023</span>
             </div>
-        </aside>
-    </main>
+            <div class="card">
+                <img src="./images/ilustration2.jpg" alt="Alien" />
+                <h3>Jantar em família</h3>
+                <span>Medibang Paint PRO, 2023</span>
+            </div>
+            <div class="card">
+                <img src="./images/ilustration3.jpg" alt="Design" />
+                <h3>Action Figure Design</h3>
+                <span>Medibang Paint PRO, 2023</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="sobre">
+        <h2 class="section-title">Sobre Mim</h2>
+        <p style="max-width: 720px; margin: 0 auto; text-align: center;">
+            Sou Cleyton Jesus: um artista que programa, um programador que cria. Minha jornada é a ponte entre a
+            expressividade
+            do design e a eficiência do desenvolvimento, transformando ideias em realidade com arte e código.
+        </p>
+    </section>
+
+    <section class="section" id="contato">
+        <h2 class="section-title">Contato</h2>
+        <div>
+            <a href="https://www.instagram.com/cleyton_jesus07/">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-instagram" viewBox="0 0 16 16">
+                    <path
+                        d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 4.7.039.855.173 1.432.37.923a3.9 3.9 0 0 0 1.417.923A3.9 3.9 0 0 0 2.76 15.58c.508.198 1.085.333 1.932.372.853.038 1.125.048 3.3.048s2.444-.01 3.3-.048c.853-.039 1.432-.173 1.932-.37.508-.198.923-.42 1.417-.923.494-.508.717-.923.923-1.417.198-.508.333-1.085.372-1.932.038-.853.048-1.125.048-3.3s-.01-2.444-.048-3.3c-.039-.853-.173-1.432-.37-1.932a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.508-.198-1.085-.333-1.932-.372C10.444.01 10.172 0 8 0zm0 2.16c2.168 0 2.44.01 3.296.048.78.036 1.203.166 1.485.276.273.106.467.247.63.41.163.163.304.357.41.63.11.282.24.705.276 1.485.038.856.048 1.128.048 3.296s-.01 2.44-.048 3.296c-.036.78-.166 1.203-.276 1.485a2.1 2.1 0 0 1-.41.63c-.163.163-.357.304-.63.41-.282.11-.705.24-1.485.276-.856.038-1.128.048-3.296.048s-2.44-.01-3.296-.048c-.78-.036-1.203-.166-1.485-.276a2.1 2.1 0 0 1-.63-.41c-.163-.163-.304-.357-.41-.63-.11-.282-.24-.705-.276-1.485-.038-.856-.048-1.128-.048-3.296s.01-2.44.048-3.296c.036-.78.166-1.203.276-1.485a2.1 2.1 0 0 1 .41-.63c.163-.163.357-.304.63-.41.282-.11.705-.24 1.485-.276C5.556 2.17 5.829 2.16 8 2.16zm0 3.635a4.2 4.2 0 1 0 0 8.4 4.2 4.2 0 0 0 0-8.4zm0 1.83a2.37 2.37 0 1 1 0 4.74 2.37 2.37 0 0 1 0-4.74zm5.214-4.81a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4z" />
+                </svg>
+            </a>
+            <a href="https://github.com/cleytonjesus07">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github"
+                    viewBox="0 0 16 16">
+                    <path
+                        d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.2 1.87.87 2.33.66.07-.52.28-.87.51-1.07-2.01-.23-4.12-1-4.12-4.43 0-.98.35-1.78.92-2.42-.1-.23-.41-1.14.09-2.37 0 0 .8-.24 2.64.92.76-.21 1.55-.32 2.35-.32.8 0 1.59.11 2.35.32 1.84-1.16 2.64-.92 2.64-.92.5 1.23.2 2.14.09 2.37.57.64.92 1.43.92 2.42 0 3.44-2.11 4.2-4.12 4.43.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2c0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8" />
+                </svg>
+            </a>
+            <a href="https://www.linkedin.com/in/cleytonjesus07/">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-linkedin" viewBox="0 0 16 16">
+                    <path
+                        d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.354-.552 1.354-1.247 0-.703-.517-1.245-1.329-1.245-.821 0-1.359.542-1.359 1.245 0 .695.522 1.247 1.329 1.247zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.86 0 1.216.662 1.216 1.634v3.865h2.345V9.29c0-2.395-1.307-3.493-3.046-3.493-1.235 0-1.789.676-2.036 1.05a.75.75 0 0 0-.046.138V6.169H5.943c.045.787 0 7.225 0 7.225z" />
+                </svg>
+            </a>
+        </div>
+    </section>
+
     <footer>
-        &copy;Todos os direitos autorais a mim mesmo.
+        &copy; 2025 Cleyton Jesus | Todos os direitos reservados.
     </footer>
 </body>
 
