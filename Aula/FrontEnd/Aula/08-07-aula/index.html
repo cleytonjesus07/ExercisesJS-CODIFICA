@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container_movies {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 500px;
+            height: 500px;
+        }
+
+        .container_movies>img {
+            width: 500px;
+            object-fit: contain;
+        }
+    </style>
+</head>
+
+<body>
+    <input id="movie_title" type="text" placeholder="digite o nome de um filme">
+    <button onclick="getMovie()">Pesquisar</button>
+    <script>
+        const API_KEY = '8d095788740ea14d77b95dbfd7a66139';
+        const BASE_IMAGE_URL = 'https://image.tmdb.org/t/p/w500';
+        const API_BASE = 'https://api.themoviedb.org/titles';
+        const inputTitle = document.getElementById("movie_title");
+        async function getMovie() {
+            const title = inputTitle.value.trim();
+            const url = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${encodeURIComponent(title)}`;
+            fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data.results);
+
+                    data.results.forEach((movie) => {
+                        const div = document.createElement("div");
+                        div.className = "container_movies"
+                        const label = document.createElement("label");
+                        label.innerText = movie.original_title;
+                        const poster = document.createElement("img");
+                        poster.src = BASE_IMAGE_URL + movie.poster_path;
+
+                        div.append(label);
+                        div.append(poster);
+
+                        document.body.append(div);
+
+                    })
+                })
+                .catch(error => {
+                    console.error('Erro:', error);
+                });
+        }
+
+    </script>
+</body>
+
+</html>
